@@ -17,7 +17,7 @@
 		<%@include file="../include/sub_menu.jsp" %>
 	</div>
 
-<div class="main_main">index</div>
+<div class="main_main">インデックス</div>
 
 </div>
 
