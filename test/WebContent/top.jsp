@@ -17,7 +17,7 @@
 		<%@include file="../include/sub_menu.jsp" %>
 	</div>
 
-<div class="main_main">main</div>
+<div class="main_main">メイン</div>
 
 </div>
 
