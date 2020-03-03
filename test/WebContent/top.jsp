@@ -4,9 +4,24 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/common.css">
+<title>トップページ</title>
 </head>
 <body>
-<p>Hello World</p>
+
+<%@include file="../include/header.jsp" %>
+<div class="main">
+	<div class="main_sub">
+
+		<!-- ボタンリンクの部分を外部JSPファイルにした -->
+		<%@include file="../include/sub_menu.jsp" %>
+	</div>
+
+<div class="main_main">main</div>
+
+</div>
+
+<div class="bottom">フッター</div>
+
 </body>
 </html>

@@ -17,7 +17,7 @@ import action.Action;
 /**
  * Servlet implementation class Control
  */
-@WebServlet("/control")
+@WebServlet("/top")
 public class Control extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ServletContext context;
