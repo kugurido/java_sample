@@ -1,19 +1,29 @@
 package action;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import bean.Spil;
 import bean.User;
+import dao.SpilDAO;
 import dao.UserDAO;
 
 public class LoginAction extends Action{
 
 	@Override
 	public String execute(HttpServletRequest request) {
-		// TODO 自動生成されたメソッド・スタブ
+
 		HttpSession session = request.getSession();
+
+		User s_user = (User) session.getAttribute("user");
+		if(s_user != null) { // 既にログイン済みかチェック
+
+			return "/mypage.jsp";
+		}
+
 		String l_loginID  = request.getParameter("loginID");
 		String l_pass = request.getParameter("pass");
 
@@ -35,10 +45,15 @@ public class LoginAction extends Action{
 				// ユーザー情報が取得できなかった場合
 				if(l_user == null) {
 
-					request.setAttribute("error", "");
+					request.setAttribute("error", ""); //JSP側でエラーメッセージのifチェック用
 					return "/login.jsp";
 				}else {
+
+					SpilDAO l_sdao = new SpilDAO();
+					ArrayList<Spil> s_list = l_sdao.getSpil(l_user.getU_id());
 					session.setAttribute("user", l_user);
+					session.setAttribute("spils", s_list); //ログインするユーザーの呟きを取得してセット
+					request.setAttribute("message", "ログインしました"); //JSPのログイン完了メッセージ
 					return "/mypage.jsp";
 				}
 

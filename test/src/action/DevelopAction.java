@@ -1,33 +1,19 @@
 package action;
 
-import java.sql.SQLException;
-import java.util.ArrayList;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
-import bean.User;
-import dao.UserDAO;
 
 public class DevelopAction  extends Action{
 
 	@Override
 	public String execute(HttpServletRequest request)  {
 
-		ArrayList<User> l_list = new ArrayList<>();
-		HttpSession session = request.getSession();
-		//String test = "";
-
-		try {
-			UserDAO l_udao = new UserDAO();
-			l_list = l_udao.test();
-			request.setAttribute("test", l_list);
-
-
-		} catch (SQLException | ClassNotFoundException e) {
-			// TODO 自動生成された catch ブロック
-			e.printStackTrace();
-		}
+		LocalDateTime date1 = LocalDateTime.now();
+		DateTimeFormatter df2 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+		String fdate = df2.format(date1);
+		request.setAttribute("time", fdate);
 
 
 		return "/top.jsp";

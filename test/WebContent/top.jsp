@@ -7,9 +7,10 @@
 <head>
 <meta charset="UTF-8">
 <%
-	ArrayList<User>user = (ArrayList<User>)request.getAttribute("test");
-	User l_user = null;
-	if(user != null){l_user = user.get(0);}
+	String times = "";
+	if(request.getAttribute("time") != null){
+		times = (String)request.getAttribute("time");
+	}
 %>
 
 <link rel="stylesheet" href="css/common.css">
@@ -37,7 +38,7 @@
 			<input type="hidden" name="act" value="develop"  /></form></div>
 	</div>
 
-	<div><% if(l_user != null) {%><%=l_user.getU_name() %><%} %></div>
+	<div><% if(!times.equals("")) {%><%=times %><%} %></div>
 </div>
 
 <%@include file="../include/footer.jsp" %>

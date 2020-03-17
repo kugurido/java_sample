@@ -14,19 +14,21 @@ public class UserDAO {
 	private Connection connection;
 	private PreparedStatement ps;
 	private PreparedStatement ps2;
+	private PreparedStatement ps3;
+
 
 	public UserDAO() throws SQLException, ClassNotFoundException{
 		String url = "jdbc:mysql://localhost:3306/wataroom?characterEncoding=UTF-8&serverTimezone=JST";
 		String user = "root";
 		String password = "root";
-		//実行=>構成から外部jarを選択してDBでやったときに選んだjarを入れる（入れておかないと↓の部分でエラーが出る）
+		//上のメニューにある実行=>構成から外部jarを選択してDBでやったときに選んだjarを入れる（入れておかないと↓の部分でエラーが出る）
 		Class.forName("com.mysql.jdbc.Driver");
 
 		connection = DriverManager.getConnection(url, user, password);
 
 		String sql = "SELECT * FROM user;";
 		ps = connection.prepareStatement(sql);
-		String sql2 = "SELECT * FROM user WHERE login_id=? and passward=?;";
+		String sql2 = "SELECT * FROM user WHERE login_id=? and password=?;";
 		ps2 = connection.prepareStatement(sql2);
 	}
 
@@ -70,6 +72,34 @@ public class UserDAO {
 	}
 
 
+//=======================================================================================
+
+	// 【ID検索】
+	public User searchID(int p_id) {
+
+		User l_user = new User();
+		ResultSet rs = null;
+		try {
+			String sql3 = "SELECT * FROM user WHERE user_id=?;";
+			ps3 = connection.prepareStatement(sql3);
+			ps3.setInt(1, p_id);
+			rs = ps3.executeQuery();
+			if(rs.next()) {
+				l_user = create(rs);
+			}
+
+		}catch(SQLException e) {
+
+			e.printStackTrace();
+		}
+
+		close();
+		return l_user;
+	}
+
+
+//=======================================================================================
+
 
 
 	// DB接続用に作った。後で消す
@@ -106,8 +136,9 @@ public class UserDAO {
 		l_user.setU_name(p_result.getString("user_name"));
 		l_user.setU_kana(p_result.getString("user_kana"));
 		l_user.setU_mail(p_result.getString("mail"));
+		l_user.setU_img(p_result.getString("user_img"));
 		l_user.setU_login(p_result.getString("login_id"));
-		l_user.setU_pass(p_result.getString("passward"));
+		l_user.setU_pass(p_result.getString("password"));
 		return l_user;
 	}
 

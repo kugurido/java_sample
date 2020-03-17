@@ -6,6 +6,7 @@ public class User {
 	String u_name;
 	String u_kana;
 	String u_mail;
+	String u_img;
 	String u_login;
 	String u_pass;
 
@@ -33,6 +34,13 @@ public class User {
 	}
 	public void setU_mail(String u_mail) {
 		this.u_mail = u_mail;
+	}
+
+	public String getU_img() {
+		return u_img;
+	}
+	public void setU_img(String u_img) {
+		this.u_img = u_img;
 	}
 	public String getU_login() {
 		return u_login;

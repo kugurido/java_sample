@@ -23,7 +23,7 @@
 
 
 <link rel="stylesheet" href="css/common.css">
-
+<link rel="stylesheet" href="css/detail.css">
 <title>詳細ページ</title>
 </head>
 <body>
@@ -39,12 +39,17 @@
 	<div class="main_main">
 		<div><h3>書籍詳細</h3></div>
 
-		<div>
-
-		<%=item.getI_name() %>
-
+		<div class="detail">
+			<img src="<%=item.getI_img() %>" alt="準備中" >
+		</div>
+		<div class="detail">
+			<!-- ここに書籍ジャンル -->
+			書籍名：<%=item.getI_name() %><br/>
+			出版社：<%=item.getI_publisher() %><br/>
+			著者名：<%=item.getI_author() %><br/>
 		</div>
 
+		<div class="clear"></div>
 	</div>
 
 </div>

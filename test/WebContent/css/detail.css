@@ -1,0 +1,17 @@
+img{
+
+	width:150px;
+	height:200px;
+}
+
+.detail{
+
+	float:left;
+	padding:10px;
+
+}
+
+.clear{
+
+	clear:both;
+}
