@@ -1,0 +1,139 @@
+.plan{
+	margin-top:20px;
+	margin-bottom:10px;
+	text-align:center;
+	font-size:large;
+}
+
+
+
+.tab-group{
+	padding-inline-start:0px;
+	margin-block-end:0px;
+    display: flex;
+    justify-content: start;
+
+}
+.tab{
+	height:1em;
+    flex-grow:1;
+    padding-top:5px;
+    padding-bottom:5px;
+    list-style:none;
+    border:solid 1px #CCC;
+    text-align:center;
+    cursor:pointer;
+    border:solid 1px #000;
+
+}
+.panel-group{
+
+    border:solid 1px #000;
+    border-top:none;
+    background:#eee;
+    padding:5px;
+}
+.panel{
+	display:none;
+
+}
+.tab.is-active{
+    background:#eee;
+    color:#F00;
+    transition: all 0.2s ease-out;
+    border-bottom:solid 1px #eee;
+}
+.panel.is-show{
+    display:block;
+}
+
+
+.tab:hover{
+
+	top: calc(100% + 2em);
+
+}
+
+
+.item_img{
+
+	width:150px;
+	height:180px;
+}
+
+
+.imgCh{
+
+display:none;
+}
+
+.td_left{
+
+	text-align:center;
+}
+
+.td_right{
+
+	padding-left:20px;
+	vertical-align:top;
+	white-space: nowrap;
+}
+
+
+
+.insertBtn{
+
+	text-align:center;
+	vertical-align: top;
+}
+
+
+textarea{
+
+	resize:none;
+}
+
+div.insert{
+
+	text-align:center;
+	margin-top:10px;
+}
+
+
+input.insert{
+	width:180px;
+	color:#ffffff;
+	background-color:#ff220d;
+	border: 2px #ff220d solid;
+  	border-radius: 3px;
+  	transition: 0.2s ;
+  	padding:5px;
+}
+
+input.insert:hover{
+
+	color:#ffffff;
+	background-color:#f7950d;
+	cursor:pointer;
+
+}
+
+input.readinput{
+
+	width:100%;
+	box-sizing: border-box;
+	-webkit-box-sizing:border-box; /* Chrome, Safari */
+}
+
+input.pileinput{
+
+	width:300px;
+	box-sizing: border-box;
+	-webkit-box-sizing:border-box; /* Chrome, Safari */
+}
+
+.ins_img{
+
+	width:150px;
+	height:180px;
+}

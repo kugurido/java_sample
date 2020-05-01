@@ -1,3 +1,58 @@
+.titleDiv{
+
+	padding-left:15px;
+}
+
+
+.plan{
+	margin-top:20px;
+	margin-bottom:10px;
+	text-align:center;
+	font-size:large;
+}
+
+
+
+.tab-group{
+	padding-inline-start:0px;
+	margin-block-end:0px;
+    display: flex;
+    justify-content: start;
+
+}
+.tab{
+	height:1em;
+    flex-grow:1;
+    padding-top:5px;
+    padding-bottom:5px;
+    list-style:none;
+    border:solid 1px #CCC;
+    text-align:center;
+    cursor:pointer;
+    border:solid 1px #000;
+
+}
+.panel-group{
+
+    border:solid 1px #000;
+    border-top:none;
+    background:#eee;
+    padding:5px;
+}
+.panel{
+	display:none;
+
+}
+.tab.is-active{
+    background:#eee;
+    color:#F00;
+    transition: all 0.2s ease-out;
+    border-bottom:solid 1px #eee;
+}
+.panel.is-show{
+    display:block;
+    text-align:-webkit-center;
+}
 
 
 img.prof{
@@ -23,58 +78,49 @@ div.content_main{
 
 div.content{
 
-	float:left;
-	background-color:#7777ff;
+	display:flex;
+	justify-content:center;
 
 }
 
 div.content_Btn{
 
 	margin-left:20px;
-	background-color:#77ffff;
 }
 
-div.content01{
-	float:left;
-	margin-top:20px;
-	margin-left:20px;
+div.contents{
+	margin-top:10px;
+	margin-bottom:10px;
 	text-align:center;
-	background-color:#000000;
 }
 
-div.content02{
-	float:left;
-	margin:20px;
-	text-align:center;
-	background-color:#000000;
-}
 
-div.content03{
-	float:left;
-	margin-top:20px;
-	margin-right:20px;
-	text-align:center;
-}
 
 .menuBtn{
 
 	width:60px;
 	height:60px;
 	border-radius: 50%;
+	background-color:#ccc;
 
+}
+
+.menuBtn:hover{
+
+	cursor:pointer;
+	background-color:#cccfff;
+	color:#000;
 }
 
 
 textarea{
 
-	margin-left:25px;
+	margin:30px;
 	resize:none;
 }
 
 .spilBtn{
-	margin-top:10px;
-	margin-bottom:20px;
-	margin-left:30px;
+	margin-top:50px;
 	width:50px;
 	height:50px;
 	border-radius: 50%;
@@ -95,23 +141,26 @@ textarea{
 
 .menus{
 	margin:auto;
-	background-color:#ff4444;
+	display:flex;
+	justify-content:space-evenly;
 }
 
 
-.spilDiv{
+div.spilDiv{
 
 	max-height:300px;
 	overflow-x:hidden;
+
 }
 
 
 .spil_table{
 
-	width:500px;
+	width:600px;
 	height:120px;
 	border-collapse: separate;
 	margin-bottom:3px;
+	background-color:#fff;
 
 }
 
@@ -130,11 +179,19 @@ textarea{
 
 	width:25%;
 	text-align:center;
-	vertical-align:middle;
+
 }
 
 .td2{
 	border-bottom-style:none;
+	padding-left:10px;
+	padding-right:10px;
+
+}
+
+pre{
+
+	white-space:pre-wrap;
 }
 
 .td3{
@@ -172,4 +229,58 @@ textarea{
 	background-color:#00c0ff;
 	cursor:pointer;
 
+}
+
+
+.item_img{
+    width:  100px;       /* ※縦横を同値に */
+    height: 150px;       /* ※縦横を同値に */
+    margin:5px;
+	margin-top:10px;
+
+}
+
+.readBtn{
+
+	width:50px;
+	height:50px;
+	border-radius: 50%;
+	background-color:#ff7777;
+}
+
+.readBtn:hover{
+
+	cursor:pointer;
+	background-color:#ffa777;
+}
+
+
+.pile_table{
+
+	width:600px;
+	height:120px;
+	border-collapse: collapse;
+	margin-top:5px;
+	background-color:#fff;
+}
+
+.tdp{
+
+	border-width:2px;
+	border-style:groove;
+	padding-left:10px;
+}
+
+.td1p{
+
+	width:20%;
+	text-align:center;
+}
+
+
+.td_r{
+
+	padding:5px;
+	padding-left:10px;
+	padding-right:10px;
 }

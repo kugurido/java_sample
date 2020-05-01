@@ -14,6 +14,8 @@ public class ItemDAO {
 	private Connection connection;
 	private PreparedStatement ps;
 	private PreparedStatement ps2;
+	private PreparedStatement ps3;
+	private PreparedStatement ps4;
 
 	public ItemDAO() throws SQLException {
 
@@ -85,9 +87,122 @@ public class ItemDAO {
 
 	}
 
+//====================================================================================
 
+	// 【登録済ItemのIDを取得するためのメソッド】
+	public Item searchNameAndAuthor(String p_name,String p_author) {
 
+		Item l_item = new Item();
+		try {
+			String sql = "SELECT * FROM item WHERE item_name=? and author=?";
+			ps3 = connection.prepareStatement(sql);
+			ps3.setString(1, p_name);
+			ps3.setString(2, p_author);
+			ResultSet rs = ps3.executeQuery();
+			if(rs.next()) {
 
+				l_item = create(rs);
+			}else {
+
+				l_item = null;
+			}
+
+		}catch(SQLException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
+		closePS(ps3);
+		close();
+		return l_item;
+	}
+
+//====================================================================================
+
+	//【ジャンル全件抽出】
+	public ArrayList<String> searchGenreAll(){
+
+		ArrayList<String> list = new ArrayList<>();
+
+		try {
+			String sql = "SELECT DISTINCT genre from item";
+			ps3 = connection.prepareStatement(sql);
+			ResultSet rs = ps3.executeQuery();
+			while(rs.next()) {
+
+				String str = rs.getString("genre");
+				list.add(str);
+			}
+
+		} catch (SQLException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
+		closePS(ps3);
+		close();
+		return list;
+
+	}
+
+//====================================================================================
+
+	//【データベース登録】
+	public int insertItem(Item p_item) {
+
+		int l_result = 0;
+		int id = 0;
+		try {
+			String sql = "INSERT INTO item VALUES(?,?,?,?,?,?)";
+			ps3 = connection.prepareStatement(sql);
+
+			id = newID();
+			if(id == 0) {
+				return l_result;
+			}
+			ps3.setInt(1, id);
+			ps3.setString(2, p_item.getI_name());
+			ps3.setString(3,p_item.getI_img());
+			ps3.setString(4,p_item.getI_genre());
+			ps3.setString(5,p_item.getI_publisher());
+			ps3.setString(6,p_item.getI_author());
+			l_result = ps3.executeUpdate();
+
+		} catch (SQLException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
+
+		closePS(ps3);
+		close();
+
+		if(l_result == 0) {
+			return l_result;
+		}else {
+			return id;
+		}
+
+	}
+//====================================================================================
+
+	// 【新規ID発行】
+	public int newID() {
+		int l_id = 0;
+		ResultSet rs = null;
+		try {
+			String sql = "SELECT MAX(item_id) as maxid FROM item";
+			ps4 = connection.prepareStatement(sql);
+			rs = ps4.executeQuery();
+			if(rs.next()) {
+				l_id = rs.getInt("maxid");
+				l_id++;
+			}
+
+		} catch (SQLException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
+
+		return l_id;
+	}
 
 
 //====================================================================================

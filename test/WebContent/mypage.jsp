@@ -14,10 +14,6 @@
 		user = (User)session.getAttribute("user");
 	}
 
-	ArrayList<Spil> s_list = null;
-	if(session.getAttribute("spils") != null){
-		s_list = (ArrayList<Spil>)session.getAttribute("spils");
-	}
 %>
 
 
@@ -39,62 +35,60 @@
 
 	<div class="main_main">
 		<h3><%=user.getU_name() %>さんのマイページ</h3>
-		<div class="content">
-			<img src="<%=user.getU_img() %>"  alt="エラー" class="prof" ><br/>
-			<input type="submit" value="画像を変更する" class="profBtn">
-		</div>
-
-
-
 
 		<form action="top" method="post">
-			<div class="content">
-				<textarea name="tweet" rows="5" cols="40" placeholder="言葉をこぼしてみよう(150文字以内)" ></textarea></div>
-			<div class="content_Btn">
-				<input type="submit" value="OK" class="spilBtn"><input type="hidden" name="act" value="spil" >
-			</div>
+		<div class="content">
+			<img src="<%=user.getU_img() %>"  alt="エラー" class="prof" >
+			<textarea name="tweet" rows="5" cols="40" placeholder="言葉をこぼしてみよう(150文字以内)" ></textarea>
+			<input type="submit" value="OK" class="spilBtn"><input type="hidden" name="act" value="spil" >
+		</div>
 		</form>
 
 	<div class="menus">
-		<form><div class="content01"><input type="submit" value="積読" class="menuBtn"><br/>
-				積読を確認する</div></form>
-		<form><div class="content02"><input type="submit" value="完読" class="menuBtn"><br/>
-				書籍を読み終えた</div></form>
-		<form><div class="content03"><input type="submit" value="読破" class="menuBtn"><br/>
-				今までの書籍</div></form>
+		<form action="top" method="post">
+			<div class="contents">
+				<input type="submit" value="設定" class="menuBtn">
+				<input type="hidden" name="act" value="jump">
+				<input type="hidden" name="link" value="config"><br/>
+					登録情報を変更する
+		</div></form>
+		<form action="top" method="post"><div class="contents">
+		<input type="submit" value="追加" class="menuBtn">
+		<input type="hidden" name="act" value="jump">
+		<input type="hidden" name="link" value="uploadpage"><br/>
+				サイトに本を載せる</div></form>
+
 	</div>
 		<div class="clear"></div>
-
-		<!-- つぶやきを取得して表示↓ -->
-	<% if(s_list != null&&s_list.size() != 0){ %>
 		<hr size="2">
-		<div class="spilDiv">
-		<%for(int i=0; i<s_list.size(); i++){
-				Spil spil = s_list.get(i); %>
-			<table border="1" class="spil_table">
-			<tr class="tr1">
-				<td rowspan="2" class="td1">
-					<img alt="エラー" src="<%=spil.getUser_img() %>" class="spil_img">
-				</td>
-				<td colspan="2" class="td2" ><%=spil.getSpil() %></td>
-			</tr>
-			<tr class="tr2">
-				<td class="td3"><%=spil.getSpil_time() %> </td>
-				<td align="center" class="td4"><form action="top" method="post">
-					<input type="hidden" name="act" value="delete">
-					<input type="hidden" name="spilID" value="<%=spil.getSpil_id() %>">
-					<input type="submit" value="削除" class="deleteBtn"></form>
-				</td>
-			</tr>
-			</table>
-		<%} %>
+
+		<div class="panelstart">
+			<ul class="tab-group">
+				<li class="tab tab-A is-active">こぼれ言</li>
+				<li class="tab tab-B" >読了一覧</li>
+				<li class="tab tab-C" >積読の山</li>
+			</ul>
+
+		    <div class="panel-group">
+				<div class="panel tab-A is-show">
+				<%@include file="../include/spil_list.jsp" %>
+				</div>
+				<div class="panel tab-B">
+					<%@include file="../include/read_list.jsp" %>
+				</div>
+				<div class="panel tab-C">
+				<%@include file="../include/pile_list.jsp" %>
+
+				</div>
+			</div>
+
 		</div>
-	<%} %>
+
 	</div>
 
 </div>
 
 <%@include file="../include/footer.jsp" %>
-
+<script src="<%=request.getContextPath() %>/js/upload.js"></script>
 </body>
 </html>

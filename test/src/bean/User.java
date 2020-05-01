@@ -9,6 +9,9 @@ public class User {
 	String u_img;
 	String u_login;
 	String u_pass;
+	String u_pr;
+
+
 
 
 	public int getU_id() {
@@ -54,6 +57,11 @@ public class User {
 	public void setU_pass(String u_pass) {
 		this.u_pass = u_pass;
 	}
-
+	public String getU_pr() {
+		return u_pr;
+	}
+	public void setU_pr(String u_pr) {
+		this.u_pr = u_pr;
+	}
 
 }

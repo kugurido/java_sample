@@ -37,34 +37,36 @@
 	</div>
 
 	<div class="main_main">
-		<div><h3>読まれた本を見てみよう</h3></div>
-		<div>
-			<%if(error != null){ %><div><%=error %></div><%} %>
-			<%if(list.size() != 0) {
-				for(int i=0; i<list.size(); i++){
-					Item item = list.get(i); %>
-				<div align="center">
-				<table border="1">
-					<tr>
-						<th>書影</th>
-						<th>書名</th>
-						<th>出版社</th>
-						<th>著者</th>
-					</tr>
+		<div class="titlediv"><span class="title">読まれた本を見てみよう</span><br/>
+			（書影をクリックすると詳細ページに移動します）
+		</div>
 
+		<div>
+		<%if(error != null){ %><div><%=error %></div><%} %>
+			<%if(list.size() != 0) { %>
+			<div align="center">
+			<table border="1">
+				<tr>
+					<th>書影</th>
+					<th>書名</th>
+					<th>出版社</th>
+					<th>著者</th>
+				</tr>
+				<% for(int i=0; i<list.size(); i++){
+					Item item = list.get(i); %>
 					<tr class="items">
 						<form action="top" method="post">
-						<td><input type="image" src="<%= item.getI_img() %>"   alt="エラー" width="100" height="150"/></td>
-						<input type="hidden" name="act" value="detail"  />
-						<input type="hidden" name="itemNo" value="<%=item.getI_id() %>" />
-						</form>
+						<td><input type="image" src="<%= item.getI_img() %>"   alt="エラー" width="100" height="150"/>
+							<input type="hidden" name="act" value="detail"  />
+							<input type="hidden" name="itemNo" value="<%=item.getI_id() %>" /></form>
+						</td>
 						<td><%= item.getI_name() %></td>
 						<td><%=item.getI_publisher() %></td>
 						<td><%= item.getI_author() %></td>
 					</tr>
-				</table>
-				</div>
-			<%}} %>
+				<%}%>
+			</table></div>
+			<% } %>
 
 		</div>
 

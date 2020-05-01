@@ -33,9 +33,16 @@
 	<br/>
 		<div>他の人が読んだ本を見る⇒</div>
 	<br/>
-		<div><form action="top" method="post">
-			<input type="submit" value="チェック" />
-			<input type="hidden" name="act" value="develop"  /></form></div>
+		<div><form action="top" method="post" >
+			<input type="text" name="aaa"    />
+			<input type="hidden" name="bbb" value="develop"  />
+			<input type="hidden" name="ccc" value="develop"   />
+			<input type="hidden" name="ddd" value="develop"   />
+			<input type="text" name="fff"    />
+			<input type="submit" value="チェック"  />
+			<input type="hidden" name="act" value="develop"   />
+			</form>
+</div>
 	</div>
 
 	<div><% if(!times.equals("")) {%><%=times %><%} %></div>

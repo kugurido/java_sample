@@ -1,11 +1,14 @@
 package action;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 
 import bean.Item;
+import bean.Revue;
 import dao.ItemDAO;
+import dao.ListDAO;
 
 public class DetailAction extends Action{
 
@@ -18,11 +21,12 @@ public class DetailAction extends Action{
 			ItemDAO l_idao = new ItemDAO();
 			Item l_item = l_idao.detail(l_id);
 			if(l_item.getI_name() == null) {
-
 				return "/error.jsp";
-
 			}else {
-
+				
+				ListDAO ldao = new ListDAO();
+				ArrayList<Revue> r_list = ldao.searchRevueForItem(l_item.getI_id());
+				request.setAttribute("revuelist", r_list);
 				request.setAttribute("detail", l_item);
 			}
 

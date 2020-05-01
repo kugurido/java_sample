@@ -22,9 +22,13 @@ public class SpilAction extends Action{
 
 		// 呟きを取得
 		String l_spil = request.getParameter("tweet");
-		if(l_spil.length() < 150) {
+		if(l_spil.length() > 150) {
 
 			request.setAttribute("message", "投稿できる文字数を超えています");
+			return "/mypage.jsp";
+		}else if(l_spil.length() ==0) {
+
+			request.setAttribute("message", "何か喋ってください");
 			return "/mypage.jsp";
 		}
 

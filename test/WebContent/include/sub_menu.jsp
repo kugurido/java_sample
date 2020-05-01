@@ -3,9 +3,10 @@
 
     <div class="sub_menu"><span>ページメニュー</span></div>
 		<div class="subInput">
-			<form action="top" method="post">
+			<form action="top" method="get">
 				<input type="submit" value="このサイトについて"  class="btn"/>
-				<input type="hidden" name="act" value="index"/>
+				<input type="hidden" name="act" value="jump"/>
+				<input type="hidden" name="link" value="index">
 			</form>
 		</div>
 		<div class="subInput">
@@ -17,13 +18,15 @@
 		<div class="subInput">
 			<form action="top" method="post">
 				<input type="submit" value="お知らせ"  class="btn"/>
-				<input type="hidden" name="act" value="index"/>
+				<input type="hidden" name="act" value="jump"/>
+				<input type="hidden" name="link" value="index">
 			</form>
 		</div>
 		<div class="subInput">
 			<form action="top" method="post">
 				<input type="submit" value="お問い合わせ"  class="btn"/>
-				<input type="hidden" name="act" value="index"/>
+				<input type="hidden" name="act" value="jump"/>
+				<input type="hidden" name="link" value="index">
 			</form>
 		</div>
 				<div class="subInput">
@@ -32,4 +35,4 @@
 				<input type="hidden" name="act" value="develop"/>
 			</form>
 		</div>
-		<div class="sub_menu"><span class="toptext">TOPページへ行くにはロゴをクリック</span></div>
+		<div align="center"><span class="toptext">TOPページへ行くには<br/>ロゴをクリック</span></div>

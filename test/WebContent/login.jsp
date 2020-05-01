@@ -48,9 +48,15 @@
 	<br/>
 	<div  class="logText">パスワード：<input type="password" name="pass"  maxlength="20" />&nbsp;(半角英数字15文字以内)</div>
 	<br/>
-	<div  class="logText"><input type="submit" value="ログイン" />
-		<input type="hidden" name="act" value="login" /></div>
+	<div  class="logText">
+		<input type="submit" value="ログイン"  class="loginCheck"/>
+		<input type="hidden" name="act" value="login" />
+	</div>
 	</form>
+	<div class="loginLink">
+		<a href="top?act=newUser" class="loginLink">新規登録の方はコチラ</a>
+		<a href="top?act=forget" class="loginLink">パスワードを忘れた方はコチラ</a>
+	</div>
 </div>
 
 </div>

@@ -1,0 +1,57 @@
+div.caution{
+	font-weight:bold;
+	color:#ff3232;
+
+}
+
+div.error{
+	text-align:center;
+	font-weight:bold;
+	color:#f0ff0f;
+	background-color:#ff0000;
+	margin-top:10px;
+	margin-bottm:10px;
+}
+
+div.table{
+
+
+}
+
+table{
+	text-align:left;
+	margin-top:10px;
+	margin-bottom:15px;
+	padding:10px;
+
+}
+
+td{
+	padding-right:10px;
+	border-style:none;
+}
+
+div.insertBtn{
+
+	text-align:center;
+}
+
+input.insertBtn{
+
+	color:#ffffff;
+	background-color:#b200b2;
+	border-radius: 20px;
+	padding: 3px 25px;
+	margin-top:5px;
+	margin-bottom:5px;
+	border: 2px #b200b2 solid;
+	font-size:120%;
+	font-weight:bold;
+
+}
+
+input.insertBtn:hover{
+
+	background-color:#db00db;
+	cursor:pointer;
+}
