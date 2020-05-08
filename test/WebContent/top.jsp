@@ -31,18 +31,9 @@
 	<br/>
 		<div>ゲストでサイトを閲覧したい方はコチラ</div>
 	<br/>
-		<div>他の人が読んだ本を見る⇒</div>
+		<div>他の人が読んだ本を見る⇒<a href="top?act=itemlist">コチラ</a></div>
 	<br/>
-		<div><form action="top" method="post" >
-			<input type="text" name="aaa"    />
-			<input type="hidden" name="bbb" value="develop"  />
-			<input type="hidden" name="ccc" value="develop"   />
-			<input type="hidden" name="ddd" value="develop"   />
-			<input type="text" name="fff"    />
-			<input type="submit" value="チェック"  />
-			<input type="hidden" name="act" value="develop"   />
-			</form>
-</div>
+
 	</div>
 
 	<div><% if(!times.equals("")) {%><%=times %><%} %></div>
