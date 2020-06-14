@@ -58,7 +58,7 @@
 		<a href="top?act=forget" class="loginLink">パスワードを忘れた方はコチラ</a>
 	</div>
 	<br/>
-	<div class="logText">ゲストでログインする際はIDを「guest」、パスワードを「0000」と入力してください.</div>
+	<div class="logText">ゲストでログインする際はIDを「guest」、パスワードを「0000」と入力してください</div>
 </div>
 
 </div>

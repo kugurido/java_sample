@@ -90,7 +90,7 @@ public class JumpAction extends Action{
 //--------------------------------------------------------------------------
 		if(p_link.equals("login")) {
 
-			l_jsp = "/login.jsp";//
+			l_jsp = "/login.jsp";
 		}
 
 		return l_jsp;
