@@ -72,6 +72,21 @@ public class JumpAction extends Action{
 
 			l_jsp = "/changemail.jsp";
 		}
+//--------------------------------------------------------------------------
+		if(p_link.equals("develop")) {
+
+			l_jsp = "/develop.jsp";
+		}
+//--------------------------------------------------------------------------
+		if(p_link.equals("topix")) {
+
+			l_jsp = "/topix.jsp";
+		}
+//--------------------------------------------------------------------------
+		if(p_link.equals("question")) {
+
+			l_jsp = "/question.jsp";
+		}
 
 		return l_jsp;
 	}

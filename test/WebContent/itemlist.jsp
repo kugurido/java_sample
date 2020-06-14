@@ -58,8 +58,8 @@
 						<form action="top" method="post">
 						<td><input type="image" src="<%= item.getI_img() %>"   alt="エラー" width="100" height="150"/>
 							<input type="hidden" name="act" value="detail"  />
-							<input type="hidden" name="itemNo" value="<%=item.getI_id() %>" /></form>
-						</td>
+							<input type="hidden" name="itemNo" value="<%=item.getI_id() %>" />
+						</td></form>
 						<td><%= item.getI_name() %></td>
 						<td><%=item.getI_publisher() %></td>
 						<td><%= item.getI_author() %></td>
