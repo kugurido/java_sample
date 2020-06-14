@@ -29,7 +29,7 @@
 	<div class="main_main">
 		<h2>～書籍から得られる感情を残し、伝える～</h2>
 	<br/>
-		<div>ゲストでサイトを閲覧したい方はコチラ</div>
+		<div>ゲストでサイトを閲覧したい方は<a href="top?act=jump&link=login">コチラ</a></div>
 	<br/>
 		<div>他の人が読んだ本を見る⇒<a href="top?act=itemlist">コチラ</a></div>
 	<br/>

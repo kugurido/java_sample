@@ -57,6 +57,8 @@
 		<a href="top?act=newUser" class="loginLink">新規登録の方はコチラ</a>
 		<a href="top?act=forget" class="loginLink">パスワードを忘れた方はコチラ</a>
 	</div>
+	<br/>
+	<div class="logText">ゲストでログインする際はIDを「guest」、パスワードを「0000」と入力してください</div>
 </div>
 
 </div>
