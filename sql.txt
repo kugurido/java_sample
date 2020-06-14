@@ -1,0 +1,24 @@
+create database wataroom;
+
+create table item(item_id INTEGER(5) PRIMARY KEY AUTO_INCREMENT,item_name VARCHAR(50), item_img VARCHAR(50),genre VARCHAR(10),publisher VARCHAR(15),author VARCHAR(20))
+
+create table user(user_id INTEGER(5) PRIMARY KEY,user_name VARCHAR(15), user_kana VARCHAR(15), mail VARCHAR(100),user_img VARCHAR(100), login_id VARCHAR(15), password VARCHAR(15), pr VARCHAR(100))
+
+create table readitem(read_id INTEGER(5) PRIMARY KEY,user_id INTEGER(5),item_id INTEGER(5),revue VARCHAR(500),read_time date)
+
+create table tweet(tweet_id INTEGER(10) PRIMARY KEY AUTO_INCREMENT,user_id INTEGER(5),tweet_day datetime,tweets VARCHAR(150))
+
+create table pileup(user_id INTEGER(5), item_id INTEGER(5), pile_day date)
+
+
+
+
+INSERT INTO item VALUES(1001,"第2版これならわかる Java入門の入門","img/javabook.png","学習","翔泳社","坂下夕里");
+
+INSERT INTO item VALUES(1002,"スラスラ読める　Rubyふりがなプログラミング","img/surasuraRuby.png","学習","インプレス","リブロワークス");
+
+INSERT INTO user VALUES(1001,'ゲスト','ゲスト','guest@wataru.com','img/guest.png','guest','0000','はじめまして');
+
+INSERT INTO readitem VALUES(1001,1001,1001,'Javaの勉強にと購入したが、すぐにプログラミングスクールに通うことになり積読。スクール卒業後に改めて読み始めた。0から読んでも充分に理解に繋がる内容であると感じる。ただこの本ではJavaでのプログラミングにおけるJSPやサーブレットはあくまでJavaを覚えた次の段階という認識のせいか概要を触れる程度であるため、Javaの学習を進める上ではこの次に別の本なり学習方法を模索する必要はある。','2020-03-14');
+
+INSERT INTO pileup VALUES(1001,1002,'2020-03-20');
